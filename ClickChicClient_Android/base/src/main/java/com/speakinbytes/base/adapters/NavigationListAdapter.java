@@ -113,13 +113,8 @@ public class NavigationListAdapter extends BaseAdapter
             if (position == 0) return headers.getView(sectionnum, convertView, parent);
             if (position < size){
             View v = adapter.getView(position - 1, convertView, parent);
-            TextView textView= (TextView) v.findViewById(R.id.list_item_title);
-            textView.setCompoundDrawablesWithIntrinsicBounds(
-                   icons[position-1],
-                    0,
-                    0,
-                    0);
-             return v;
+            TextView textView= (TextView) v.findViewById(android.R.id.text1);
+
             }
 
             // otherwise jump into next section

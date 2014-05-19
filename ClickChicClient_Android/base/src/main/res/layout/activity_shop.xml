@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.speakinbytes.base.MainActivity">
+    tools:context="com.speakinbytes.base.ShopActivity">
 
     <!-- As the main content view, the view below consumes the entire
          space available using match_parent in both dimensions. -->
@@ -25,11 +25,6 @@
         android:layout_width="@dimen/navigation_drawer_width"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:name="com.speakinbytes.base.NavigationDrawerFragment" />
-    <fragment android:id="@+id/navigation_drawer_right"
-        android:layout_width="@dimen/navigation_drawer_width"
-        android:layout_height="match_parent"
-        android:layout_gravity="end"
-        android:name="com.speakinbytes.base.NavigationDrawerRightFragment" />
+        android:name="com.speakinbytes.base.NavigationDrawer.NavigationDrawerFragment" />
 
 </android.support.v4.widget.DrawerLayout>

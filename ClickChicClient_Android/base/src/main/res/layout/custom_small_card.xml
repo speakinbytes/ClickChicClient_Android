@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/vendor"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4">
+
+        <com.etsy.android.grid.util.DynamicHeightTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="RockerTree"
+            android:id="@+id/txtSeller"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/fucsia"
+            android:textStyle="bold" />
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageView"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:background="@drawable/ic_launcher"
+            android:layout_marginRight="5dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imgMain"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="100dp"
+            android:scaleType="center" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ccffffff"
+            android:padding="5dp"
+            android:layout_alignParentBottom="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Medium Text"
+                android:id="@+id/txtModel"
+                android:textStyle="bold"
+                android:layout_alignParentTop="false"
+                android:layout_alignParentLeft="true"
+                android:singleLine="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="10.99 Eur"
+                android:layout_below="@+id/txtModel"
+                android:id="@+id/txtPrice"
+                android:layout_alignLeft="@+id/txtModel"
+                android:layout_alignParentEnd="true"
+                android:singleLine="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:padding="5dp"
+        android:layout_weight="4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=" 25"
+            android:paddingLeft="3dp"
+            android:drawableLeft="@drawable/chat"
+            android:id="@+id/txtChat"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text=" 75"
+            android:paddingLeft="3dp"
+            android:layout_marginRight="3dp"
+            android:drawableLeft="@drawable/love"
+            android:id="@+id/txtLove"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/txtChat" />
+
+    </RelativeLayout>
+</LinearLayout>

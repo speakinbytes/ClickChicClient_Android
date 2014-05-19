@@ -1,0 +1,19 @@
+<LinearLayout
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.speakinbytes.base.adapters.PromotedFragment">
+
+    <include layout="@layout/custom_card"/>
+    <!-- TODO: Update blank fragment layout -->
+    <com.etsy.android.grid.StaggeredGridView
+        android:id="@+id/grid_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:item_margin="8dp"
+        app:column_count="2" />
+    </LinearLayout>
+

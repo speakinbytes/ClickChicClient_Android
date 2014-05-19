@@ -1,8 +1,54 @@
 <resources>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+
+    <!-- the theme applied to the application or activity -->
+    <style name="AppTheme"
+        parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
+        <item name="android:actionMenuTextColor">@android:color/white</item>
     </style>
 
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/fucsia</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/fucsia</item>
+    </style>
+
+    <style name="card_thumbnail_image">
+        <item name="android:layout_width">@dimen/card_thumbnail_width</item>
+        <item name="android:layout_height">@dimen/card_thumbnail_height</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="card_thumbnail_outer_layout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="small_text" parent="android:TextAppearance.DeviceDefault.Small">
+        <item name="android:textColor">@color/gray_light_text</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:layout_marginBottom">3dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:typeface">sans</item>
+    </style>
+
+    <style name="medium_text" parent="android:TextAppearance.DeviceDefault.Medium">
+        <item name="android:textColor">@color/gray_light_text</item>
+        <item name="android:paddingLeft">2dp</item>
+        <item name="android:gravity">left|center_vertical</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:typeface">sans</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
 </resources>

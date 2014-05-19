@@ -1,4 +1,4 @@
-package com.speakinbytes.base;
+package com.speakinbytes.base.NavigationDrawer;
 
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
@@ -11,6 +11,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,8 +23,12 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.speakinbytes.base.R;
 import com.speakinbytes.base.adapters.NavigationListAdapter;
+import com.speakinbytes.base.managers.CategoryManager;
+import com.speakinbytes.base.models.Category;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,7 +37,7 @@ import java.util.Map;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
-public class NavigationDrawerRightFragment extends Fragment {
+public class NavigationDrawerRightFragment extends Fragment implements CategoryManager.CategoriesListener{
 
     /**
      * Remember the position of the selected item.
@@ -55,16 +60,6 @@ public class NavigationDrawerRightFragment extends Fragment {
      */
     private ActionBarDrawerToggle mDrawerToggle;
 
-    public final static String ITEM_TITLE = "title";
-    public final static String ITEM_CAPTION = "caption";
-
-    // SectionHeaders
-    private final static String[] headers = new String[]{"Categorías", "Filtros"};
-
-    // Section Contents
-    private final static String[] content = new String[]{"Moda", "Complementos", "lalala", "lalalito", "riete un ratito"};
-    // Section Contents
-    private final static String[] filtros = new String[]{"Talla", "precio"};
 
 
     // MENU - ListView
@@ -80,14 +75,6 @@ public class NavigationDrawerRightFragment extends Fragment {
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
-
-    public Map<String, ?> createItem(String title, String caption) {
-        Map<String, String> item = new HashMap<String, String>();
-        item.put(ITEM_TITLE, title);
-        item.put(ITEM_CAPTION, caption);
-        return item;
-    }
-
 
     public NavigationDrawerRightFragment() {
     }
@@ -124,7 +111,16 @@ public class NavigationDrawerRightFragment extends Fragment {
         mDrawerView = (View) inflater.inflate(
                 R.layout.fragment_navigation_drawer_right, container, false);
 
-        findViews(mDrawerView);
+        mListOptions = (ListView) mDrawerView.findViewById(R.id.right_drawer);
+        mListOptions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                selectItem(position);
+            }
+        });
+
+
+
         return mDrawerView;
     }
 
@@ -145,32 +141,7 @@ public class NavigationDrawerRightFragment extends Fragment {
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);*/
 
-    private void findViews(View container) {
 
-        // Create the ListView Adapter
-        adapter = new NavigationListAdapter(getActivity());
-
-        adapter.addSection(headers[0], new ArrayAdapter<String>(getActivity(), R.layout.icon_list_item, content));
-
-        // Get a reference to the ListView holder
-        mListOptions = (ListView) container.findViewById(R.id.right_drawer);
-
-        // Set the adapter on the ListView holder
-        mListOptions.setAdapter(adapter);
-
-        // Listen for Click events
-        mListOptions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long duration) {
-                String item = (String) adapter.getItem(position);
-                Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
-            }
-        });
-
-
-
-
-    }
 
     public boolean isDrawerOpen() {
         return mDrawerLayout != null && mDrawerLayout.isDrawerOpen(mFragmentContainerView);
@@ -267,6 +238,7 @@ public class NavigationDrawerRightFragment extends Fragment {
     public void onAttach(Activity activity) {
         super.onAttach(activity);
         try {
+            CategoryManager.getCategories(this);
             mCallbacks = (NavigationDrawerCallbacks) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException("Activity must implement NavigationDrawerCallbacks.");
@@ -289,7 +261,8 @@ public class NavigationDrawerRightFragment extends Fragment {
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         // Forward the new configuration the drawer toggle component.
-        mDrawerToggle.onConfigurationChanged(newConfig);
+        if(mDrawerToggle!=null)
+            mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
     @Override
@@ -309,10 +282,10 @@ public class NavigationDrawerRightFragment extends Fragment {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
+        /*if (item.getItemId() == R.id.action_example) {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -330,6 +303,35 @@ public class NavigationDrawerRightFragment extends Fragment {
 
     private ActionBar getActionBar() {
         return ((ActionBarActivity) getActivity()).getSupportActionBar();
+    }
+
+    @Override
+    public void getCategories(boolean result, ArrayList<Category> cats) {
+        Log.i("NAV_RIGHT", "Result "+result+ " cats "+cats.size());
+        // Create the ListView Adapter
+        if(result)
+        {
+            adapter = new NavigationListAdapter(getActivity());
+            ArrayList<String> titles = new ArrayList<String>();
+            for(int i = 0;i<cats.size();i++)
+                titles.add(cats.get(i).getName());
+
+            mListOptions.setAdapter(new ArrayAdapter<String>(
+                    getActionBar().getThemedContext(),
+                    R.layout.icon_list_item,
+                    android.R.id.text1,
+                    titles));
+            mListOptions.setItemChecked(mCurrentSelectedPosition, true);
+            mListOptions.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long duration) {
+                    String item = (String) adapter.getItem(position);
+                    Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+        else
+            Toast.makeText(getActivity(), "Error", Toast.LENGTH_SHORT).show();
     }
 
     /**

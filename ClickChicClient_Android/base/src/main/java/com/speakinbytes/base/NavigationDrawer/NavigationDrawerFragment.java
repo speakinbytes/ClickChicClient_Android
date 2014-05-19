@@ -1,5 +1,8 @@
-package com.speakinbytes.base;
+package com.speakinbytes.base.NavigationDrawer;
 
+import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.support.v7.app.ActionBar;
@@ -11,6 +14,7 @@ import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,10 +26,19 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.speakinbytes.base.ProductDetailActivity;
+import com.speakinbytes.base.R;
+import com.speakinbytes.base.ShopActivity;
 import com.speakinbytes.base.adapters.NavigationListAdapter;
+import com.speakinbytes.base.fragments.HomeFragment;
+import com.speakinbytes.base.fragments.ShopFragment;
+import com.speakinbytes.base.models.Shop;
+import com.speakinbytes.base.utils.Constants;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import static com.speakinbytes.base.R.color.fucsia;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -55,24 +68,11 @@ public class NavigationDrawerFragment extends Fragment {
      */
     private ActionBarDrawerToggle mDrawerToggle;
 
-    public final static String ITEM_TITLE = "title";
-    public final static String ITEM_CAPTION = "caption";
-
-    // SectionHeaders
-    private final static String[] headers = new String[]{"Perfil", "Opciones", "Configuración"};
 
     // Section Contents
     private final static String[] content = new String[]{"Home", "Shops", "Trends", "Wishlist", "Discover"};
-    // Section Contents
-    private final static String[] options = new String[]{"Find Friends", "Invite Friends", "Account", "Salir"};
-    // Section Contents
-    private final static String[] perfil = new String[]{"Nombre", "Apellidos"};
 
-    // MENU - ListView
-    private ListView mListOptions;
 
-    // Adapter for ListView Contents
-    private NavigationListAdapter adapter;
 
     // ListView Contents
     private ListView mListConf;
@@ -85,12 +85,6 @@ public class NavigationDrawerFragment extends Fragment {
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
 
-    public Map<String, ?> createItem(String title, String caption) {
-        Map<String, String> item = new HashMap<String, String>();
-        item.put(ITEM_TITLE, title);
-        item.put(ITEM_CAPTION, caption);
-        return item;
-    }
 
 
     public NavigationDrawerFragment() {
@@ -127,7 +121,8 @@ public class NavigationDrawerFragment extends Fragment {
 
         mDrawerView = (View) inflater.inflate(
                 R.layout.fragment_navigation_drawer_left, container, false);
-        /*mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ListView mDrawerListView = (ListView) mDrawerView.findViewById(R.id.right_drawer);
+        mDrawerListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 selectItem(position);
@@ -135,43 +130,17 @@ public class NavigationDrawerFragment extends Fragment {
         });
         mDrawerListView.setAdapter(new ArrayAdapter<String>(
                 getActionBar().getThemedContext(),
-                android.R.layout.simple_list_item_1,
+                R.layout.icon_list_item,
                 android.R.id.text1,
                 new String[]{
-                        getString(R.string.title_section1),
-                        getString(R.string.title_section2),
-                        getString(R.string.title_section3),
+                       "Home","Shops","Trends", "Discover", "Find friends", "Settings"
                 }));
-        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);*/
-        findViews(mDrawerView);
+        mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
+       // findViews(mDrawerView);
+
         return mDrawerView;
     }
 
-    private void findViews(View container) {
-
-        // Create the ListView Adapter
-        adapter = new NavigationListAdapter(getActivity());
-
-        adapter.addSection(headers[0], new ArrayAdapter<String>(getActivity(), R.layout.icon_list_item, perfil));
-        adapter.addSection(headers[1], new ArrayAdapter<String>(getActivity(), R.layout.icon_list_item, content));
-        adapter.addSection(headers[2], new ArrayAdapter<String>(getActivity(), R.layout.icon_list_item, options));
-
-
-        // Get a reference to the ListView holder
-        mListConf = (ListView) container.findViewById(R.id.option_list);
-
-        // Set the adapter on the ListView holder
-        mListConf.setAdapter(adapter);
-
-        // Listen for Click events
-        mListConf.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long duration) {
-                String item = (String) adapter.getItem(position);
-                Toast.makeText(getActivity(), item, Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
 
     public boolean isDrawerOpen() {
         return mDrawerLayout != null && mDrawerLayout.isDrawerOpen(mFragmentContainerView);
@@ -210,7 +179,10 @@ public class NavigationDrawerFragment extends Fragment {
                 if (!isAdded()) {
                     return;
                 }
-
+                ActionBar actionBar = getActionBar();
+                actionBar.setDisplayShowTitleEnabled(true);
+                actionBar.setDisplayHomeAsUpEnabled(true);
+                actionBar.setBackgroundDrawable(new ColorDrawable(getActivity().getResources().getColor(R.color.fucsia)));
                 getActivity().supportInvalidateOptionsMenu(); // calls onPrepareOptionsMenu()
             }
 
@@ -229,7 +201,11 @@ public class NavigationDrawerFragment extends Fragment {
                             .getDefaultSharedPreferences(getActivity());
                     sp.edit().putBoolean(PREF_USER_LEARNED_DRAWER, true).commit();
                 }
-
+                ActionBar actionBar = getActionBar();
+                actionBar.setDisplayShowTitleEnabled(false);
+                actionBar.setDisplayHomeAsUpEnabled(false);
+                actionBar.setIcon(android.R.color.transparent);
+                actionBar.setBackgroundDrawable(new ColorDrawable(getActivity().getResources().getColor(R.color.drawer_background)));
                 getActivity().supportInvalidateOptionsMenu(); // calls onPrepareOptionsMenu()
             }
         };
@@ -253,9 +229,23 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;
-        if (mListConf != null) {
-            mListConf.setItemChecked(position, true);
+
+        Fragment fragment =null;
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+        Log.i("NAV","Position "+mCurrentSelectedPosition );
+      if(position == 0)
+      {
+          fragment = new HomeFragment();
+          fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
+      }
+        else if(position == 1)
+      {
+                Intent i = new Intent(getActivity(), ShopActivity.class);
+                i.putExtra(Constants.ARGS_SHOP, new Shop());
+                getActivity().startActivity(i);
         }
+
+
         if (mDrawerLayout != null) {
             mDrawerLayout.closeDrawer(mFragmentContainerView);
         }
@@ -310,10 +300,10 @@ public class NavigationDrawerFragment extends Fragment {
             return true;
         }
 
-        if (item.getItemId() == R.id.action_example) {
+        /*if (item.getItemId() == R.id.action_example) {
             Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
             return true;
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
@@ -324,9 +314,9 @@ public class NavigationDrawerFragment extends Fragment {
      */
     private void showGlobalContextActionBar() {
         ActionBar actionBar = getActionBar();
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setTitle(R.string.app_name);
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setIcon(android.R.color.transparent);
+
     }
 
     private ActionBar getActionBar() {

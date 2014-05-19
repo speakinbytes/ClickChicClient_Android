@@ -9,5 +9,16 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_product">ProductActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_pager">PagerActivity</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="generic_server_down">Servidor no disponible</string>
+    <string name="generic_error">Se ha producido un error</string>
+    <string name="no_internet">No tiene conexión</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_shop">ShopActivity</string>
 
 </resources>

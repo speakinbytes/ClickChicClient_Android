@@ -1,0 +1,124 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.speakinbytes.base.fragments.ProductDetailFragment">
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@android:color/transparent"
+        android:id="@+id/lyPagertop"
+        android:layout_weight="1"
+        >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/indicator"
+            android:layout_alignBottom="@+id/pager"
+            android:layout_marginBottom="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="15dp"
+            />
+        </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_weight="1.5">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imgShop"
+            android:maxHeight="60dp"
+            android:maxWidth="60dp"
+            android:layout_alignTop="@+id/txtModel"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/txtModel"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/imgShop"
+            android:layout_marginLeft="60dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:id="@+id/txtTime"
+            android:text="3 hrs ago"
+            android:layout_marginTop="2dp"
+            android:textColor="#333333"
+            android:layout_alignTop="@+id/txtModel"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text=" by "
+            android:id="@+id/txtBy"
+            android:layout_below="@+id/txtModel"
+            android:layout_alignLeft="@+id/txtModel"
+            android:layout_alignStart="@+id/txtModel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="@android:color/holo_blue_bright"
+            android:id="@+id/txtSellerName"
+            android:text="RockerTree"
+            android:layout_marginLeft="5dp"
+            android:layout_alignTop="@+id/txtBy"
+            android:layout_toRightOf="@+id/txtBy" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:id="@+id/lyDetails"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        >
+        <com.astuetz.PagerSlidingTabStrip
+            android:id="@+id/tabs"
+            app:pstsDividerColor="#00000000"
+            app:pstsIndicatorColor="#ea4c88"
+            app:pstsTabPaddingLeftRight="30dip"
+            app:pstsIndicatorHeight="4dp"
+            app:pstsUnderlineColor="#ea4c88"
+            android:gravity = "center_horizontal"
+            android:layout_width="match_parent"
+            android:background="@android:color/white"
+            android:layout_height="48dip" />
+
+        <android.support.v4.view.ViewPager xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/pagerDetails"
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:textColor="@android:color/white"
+        android:id="@+id/buyButton"
+        android:background="#0caefe"
+        android:layout_weight="1.5"
+        />
+
+</LinearLayout>

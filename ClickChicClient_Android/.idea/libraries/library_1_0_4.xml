@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="library-1.0.4">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/base/build/exploded-bundles/ComEtsyAndroidGridLibrary104.aar/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/base/build/exploded-bundles/ComEtsyAndroidGridLibrary104.aar/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
