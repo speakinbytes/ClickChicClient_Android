@@ -31,12 +31,12 @@
             android:layout_width="@dimen/navigation_drawer_width"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            android:name="com.speakinbytes.base.NavigationDrawer.NavigationDrawerFragment" />
+            android:name="com.speakinbytes.base.navigation.NavigationDrawerFragment" />
         <fragment android:id="@+id/navigation_drawer_right"
             android:layout_width="@dimen/navigation_drawer_width"
             android:layout_height="match_parent"
             android:layout_gravity="end"
-            android:name="com.speakinbytes.base.NavigationDrawer.NavigationDrawerRightFragment" />
+            android:name="com.speakinbytes.base.navigation.NavigationDrawerRightFragment" />
 
     </android.support.v4.widget.DrawerLayout>
 </FrameLayout>

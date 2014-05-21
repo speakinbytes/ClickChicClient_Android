@@ -21,4 +21,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_shop">ShopActivity</string>
 
+    <!--Social Networkis -->
+    <string name="app_facebook_id">138223683049783</string>
+    <string name="consumer_key">pH14PvTd3dvucIQVRAmdlw</string>
+    <string name="consumer_secret">b5ynpCBzfE4l5hLAUA3R1ZTwKT3k9O5YEZVPKf5UL0</string>
+
 </resources>

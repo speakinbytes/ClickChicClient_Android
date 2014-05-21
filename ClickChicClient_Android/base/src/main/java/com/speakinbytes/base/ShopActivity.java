@@ -1,23 +1,16 @@
 package com.speakinbytes.base;
 
-import android.app.Activity;
-
 import android.app.ActionBar;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.widget.TextView;
 
-import com.speakinbytes.base.NavigationDrawer.NavigationDrawerFragment;
+import com.speakinbytes.base.navigation.NavigationDrawerFragment;
 import com.speakinbytes.base.fragments.ShopFragment;
-import com.speakinbytes.base.models.Product;
 import com.speakinbytes.base.models.Shop;
 import com.speakinbytes.base.utils.Constants;
 

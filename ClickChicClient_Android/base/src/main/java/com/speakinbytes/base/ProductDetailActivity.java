@@ -55,6 +55,7 @@ public class ProductDetailActivity extends ActionBarActivity{
         ActionBar actionBar = getActionBar();
         actionBar.setDisplayShowTitleEnabled(true);
         actionBar.setTitle(mTitle);
+
     }
 
 
@@ -66,15 +67,30 @@ public class ProductDetailActivity extends ActionBarActivity{
             MenuItem menuItem = menu.findItem(R.id.menu_item_share);
             // Get the provider and hold onto it to set/change the share intent.
             mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(menuItem);
+            mShareActionProvider = (ShareActionProvider) MenuItemCompat
+                    .getActionProvider(menuItem);
+            if(mShareActionProvider!=null) {
+                mShareActionProvider.setShareIntent(getDefaultIntent());
+            }
             restoreActionBar();
             return true;
     }
 
-    // Somewhere in the application.
-    public void doShare(Intent shareIntent) {
-        // When you want to share set the share intent.
-        mShareActionProvider.setShareIntent(shareIntent);
+
+    /**
+     * Defines a default (dummy) share intent to initialize the action provider.
+     * However, as soon as the actual content to be used in the intent is known
+     * or changes, you must update the share intent by again calling
+     * mShareActionProvider.setShareIntent()
+     */
+    private Intent getDefaultIntent() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/*");
+        return intent;
     }
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will

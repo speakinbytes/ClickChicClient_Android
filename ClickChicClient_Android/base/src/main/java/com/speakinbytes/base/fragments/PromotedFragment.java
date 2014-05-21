@@ -44,7 +44,7 @@ public class PromotedFragment extends Fragment implements
     private boolean mHasRequestedMore;
     private EtsyGridAdapter mAdapter;
 
-    private ArrayList<Product> mData;
+    private static ArrayList<Product> mData;
 
     private View rootView;
     /**

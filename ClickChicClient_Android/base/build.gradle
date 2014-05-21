@@ -1,34 +1,42 @@
 apply plugin: 'android'
-
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.0.1"
+    android {
+        compileSdkVersion 19
+        buildToolsVersion "19.0.1"
 
-    defaultConfig {
         defaultConfig {
-            minSdkVersion 14
-            targetSdkVersion 19
+            defaultConfig {
+                minSdkVersion 14
+                targetSdkVersion 19
+            }
         }
-    }
     buildTypes {
+        debug {
+        }
         release {
             runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+        }
+    }
+    signingConfigs {
+        debug {
+        }
     }
 }
-
 buildscript {
     repositories {
         mavenCentral()
+
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.8.0+'
+        classpath 'com.android.tools.build:gradle:0.9.+'
 
     }
 }
 repositories {
     maven { url "http://dl.bintray.com/populov/maven" }
+    maven { url "http://repo.shamanland.com" }
     mavenCentral()
 
 
@@ -41,9 +49,12 @@ dependencies {
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.mcxiaoke.viewpagerindicator:library:2.4.1'
     compile 'com.etsy.android.grid:library:1.0.4'
-    compile 'com.google.android.gms:play-services:4.2.+'
-    compile 'com.android.support:support-v4:19.0.+'
+    compile 'com.google.android.gms:play-services:4.3.+'
+    compile 'com.android.support:support-v4:19.1.+'
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'com.android.support:support-v13:+'
+    compile 'com.facebook:facebook-android-sdk:3.14.1'
     compile fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
+    compile project(':utils')
+    compile project(':login')
 }

@@ -44,7 +44,7 @@ public class ListCardFragment extends Fragment implements Card.OnLongCardClickLi
 
     CCCardArrayMultiChoiceAdapter mCardAdapter;
     private static ImageLoader mImageLoader;
-    ArrayList<Product> mProducts;
+    private static ArrayList<Product> mProducts;
 
     private CardListView listView;
     /**
@@ -67,7 +67,8 @@ public class ListCardFragment extends Fragment implements Card.OnLongCardClickLi
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ProductsManager.getProducts(this, getActivity());
+        if(mProducts==null)
+            ProductsManager.getProducts(this, getActivity());
 
     }
 

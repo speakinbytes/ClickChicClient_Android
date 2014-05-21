@@ -18,6 +18,7 @@ public class Constants {
 
     public static final String GET_CATEGORIES = "v1/categories";
 
+    public static final String ARGS_SECTION_NUMBER = "section";
 
     public static final String ARGS_PRODUCT = "producto";
 
@@ -28,4 +29,5 @@ public class Constants {
     public static final String ARGS_SHOP = "tienda";
 
     public static final String ARGS_ADAPTER = "tipoAdapter";
+
 }

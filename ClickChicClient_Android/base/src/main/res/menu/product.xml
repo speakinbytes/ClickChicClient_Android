@@ -1,11 +1,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.speakinbytes.base.ProductActivity" >
-
+    xmlns:app="http://schemas.android.com/apk/res-auto" >
     <item
         android:id="@+id/menu_item_share"
-        android:showAsAction="ifRoom"
-        android:icon="@android:drawable/ic_menu_share"
         android:title="Share"
-        android:actionProviderClass="android.support.v7.widget.ShareActionProvider" />
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider"
+        app:showAsAction="ifRoom"/>
+
 </menu>

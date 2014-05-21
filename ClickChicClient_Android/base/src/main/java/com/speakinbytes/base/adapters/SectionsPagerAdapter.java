@@ -11,6 +11,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import com.speakinbytes.base.fragments.BlankFragment;
 import com.speakinbytes.base.fragments.ListCardFragment;
 import com.speakinbytes.base.fragments.PromotedFragment;
+import com.speakinbytes.base.fragments.SimpleListProductsFragment;
 
 
 /**
@@ -30,7 +31,7 @@ public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0: // Fragment # 0 - This will show FirstFragment
-                return ListCardFragment.newInstance("ClickChic");
+                return SimpleListProductsFragment.newInstance();
             case 1: // Fragment # 0 - This will show FirstFragment different title
                 return BlankFragment.newInstance(0);
             case 2: // Fragment # 1 - This will show SecondFragment

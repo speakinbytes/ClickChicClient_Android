@@ -54,6 +54,7 @@ public class HomeFragment extends Fragment{
 
         // Set up the ViewPager with the sections adapter.
         mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
+        mViewPager.setOffscreenPageLimit(3);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
         // Bind the tabs to the ViewPager

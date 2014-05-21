@@ -2,6 +2,7 @@ package com.speakinbytes.base.fragments;
 
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.astuetz.PagerSlidingTabStrip;
+import com.speakinbytes.base.HomeActivity;
 import com.speakinbytes.base.R;
 import com.speakinbytes.base.adapters.SectionsPagerAdapter;
 import com.speakinbytes.base.adapters.ShopPagerAdapter;
@@ -86,6 +88,10 @@ public class ShopFragment extends Fragment {
         return rootView;
     }
 
-
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        ((HomeActivity) activity).onSectionAttached("SHOP");
+    }
 
 }

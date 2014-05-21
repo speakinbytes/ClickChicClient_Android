@@ -43,7 +43,7 @@ public class BlankFragment extends Fragment implements
     private ProductsAdapter mPAdapter;
     private int mKAdapter;
 
-    private ArrayList<Product> mData;
+    private static ArrayList<Product> mData;
 
     private View rootView;
     /**
@@ -157,7 +157,13 @@ public class BlankFragment extends Fragment implements
 
     @Override
     public void getProducts(boolean result, ArrayList<Product> cats) {
-        mData = cats;
-        findViews();
+        if(result) {
+            mData = cats;
+            findViews();
+        }
+        else
+        {
+            Toast.makeText(getActivity(),"Error", Toast.LENGTH_SHORT).show();
+        }
     }
 }
