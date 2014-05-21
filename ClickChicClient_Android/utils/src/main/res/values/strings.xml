@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">com.speakinbytes.utils</string>
+    <string name="aceptar">Aceptar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="error">Lo lamentamos pero se ha producido un error en la aplicación</string>
+    <string name="no_net"> Lo lamentamos pero ahora mismo no dispone de red y los datos que se muestran podrían no estar actualizadas</string>
+    <string name="lost_connection">Lo lamentamos pero se ha perdido la conexión</string>
+    <string name="wifi_connected">Conexión Wifi activa</string>
+    <string name="cargando_video">Cargando vídeo &#8230;</string>
+    <string name="time">36000</string>
+    <string name="loading_video_error">Error en la conexión</string>
+    <string name="loading_video_error_geo">Error al reproducir el vídeo. Este video está geolocalizado</string>
+    <string name="url_geo">http://media2.rtve.es/resources/TE_GLEAD/mp3/0/0/1100000000000.mp3</string>
+    <string name="dateConsumer"> http://www.rtve.es/comunes/hora/timezone.inc</string>
+    <string name="no_network_connection_toast">No se ha encontrado conexión de red</string>
+    <string name="stats_status">status</string>
+    <string name="id_google">UA&#8211;7007193&#8211;1</string>
+    <string name="stats_error">Error en google analytics</string>
+    <string name="user">* Nombre de usuario:</string>
+    <string name="password">* Contraseña:</string>
+    <string name="email">* Correo electrónico:</string>
+    <string name="required_field">* Campos obligatorios</string>
+
+     <string name="login_name">* CORREO ELECTRÓNICO:</string>
+    <string name="login_pass">* CONTRASEÑA:</string>
+    <string name="obligatorio">* CAMPOS OBLIGATORIOS</string>
+    <string name="login_entre">ENTRE CON UN CLICK\nSI YA ESTÁ EN&#8230;</string>
+</resources>

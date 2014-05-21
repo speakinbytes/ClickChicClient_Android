@@ -1,0 +1,35 @@
+apply plugin: 'android-library'
+
+android {
+    android {
+        compileSdkVersion 19
+        buildToolsVersion "19.0.1"
+
+        defaultConfig {
+            defaultConfig {
+                minSdkVersion 14
+                targetSdkVersion 19
+            }
+        }
+        buildTypes {
+            debug {
+            }
+            release {
+                runProguard false
+                proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            }
+        }
+    }
+    signingConfigs {
+        debug {
+        }
+    }
+}
+
+dependencies {
+    compile 'com.google.android.gms:play-services:4.3.+'
+    compile 'com.android.support:support-v4:19.1.+'
+    compile 'com.android.support:appcompat-v7:19.+'
+    compile 'com.android.support:support-v13:+'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

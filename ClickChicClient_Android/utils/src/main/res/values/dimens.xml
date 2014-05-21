@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+ <!-- DETALLE COMPARTIR -->
+    <dimen name="compartir_header_height">78dp</dimen>
+    <dimen name="compartir_icons_width">22dp</dimen>
+    <dimen name="compartir_campo_comentario_margin">10dp</dimen>
+    <dimen name="compartir_campo_comentario_width">202dp</dimen>
+    <dimen name="compartir_campo_comentario_margin_img">3dp</dimen>
+    <dimen name="compartir_icons_margin">3dp</dimen>
+    <dimen name="compartir_margin_between_icons">10dp</dimen>
+    <dimen name="compartir_margin_right_button">19dp</dimen>
+    <dimen name="compartir_width_button">110dp</dimen>
+    <dimen name="compartir_height_button">44dp</dimen>
+    <dimen name="compartir_edit_padding_bottom">100dp</dimen>
+    <dimen name="width_img_comment">101dp</dimen>
+    <dimen name="height_img_comment">57dp</dimen>
+    
+        <!-- Login -->
+    <dimen name="login_header_height">69dp</dimen>
+    <dimen name="Login_margin_horizontal">25dp</dimen>
+    <dimen name="Login_margin_vertical">20dp</dimen>
+    <dimen name="login_margin_bottom">90dp</dimen>
+    <dimen name="login_margin_text">100dp</dimen>
+    <dimen name="login_margin_between_text">22dp</dimen>
+    <dimen name="login_margin_to_social">108dp</dimen>
+    <dimen name="login_margin_vertical_marco">55dp</dimen>
+    <dimen name="login_margin_top_redes">10dp</dimen>
+    <dimen name="register_margin_horizontal_text">87.5dp</dimen>
+    <dimen name="register_margin_vertical_text">145.7dp</dimen>
+    <dimen name="rtve_margin_horizontal">302.5dp</dimen>
+    <dimen name="facebook_margin_horizontal">557.5dp</dimen>
+    <dimen name="twitter_margin_horizontal">812.5dp</dimen>
+    <dimen name="icons_margin_vertical">248dp</dimen>
+    <dimen name="icons_margin_vertical_text">415.8dp</dimen>
+    <dimen name="login_rtve_margin_vertical_text">143dp</dimen>
+    <dimen name="login_rtve_margin_horizontal_text">87.5dp</dimen>
+    <dimen name="label_horizontal_text">177.5dp</dimen>
+    <dimen name="label_vertical_user_text">251.54dp</dimen>
+    <dimen name="label_vertical_pass_text">316.54dp</dimen>
+    <dimen name="label_vertical_user_edit">247.9dp</dimen>
+    <dimen name="label_vertical_pass_edit">298.08dp</dimen>
+    <dimen name="edit_margin_horizontal_box">365dp</dimen>
+    <dimen name="edit_margin_vetical_box_user">248.43dp</dimen>
+    <dimen name="edit_margin_vetical_box_pass">300dp</dimen>
+    <dimen name="loginrtve_margin_vertical_button">359.37dp</dimen>
+    <dimen name="logintwitter_margin_vertical_button">319.19dp</dimen>
+    <dimen name="login_vertical_required">564.68dp</dimen>
+    <dimen name="login_horizontal_required">172.5dp</dimen>
+     
+  <dimen name="login_margin_vertical_title">16.5dp</dimen> 
+  <dimen name="login_margin_horizontal_text">23.75dp</dimen> 
+  <dimen name="login_margin_vertical_register">86.5dp</dimen> 
+  <dimen name="login_margin_horizontal_register">10dp</dimen> 
+  <dimen name="login_margin_vertical_rtve_icon">10dp</dimen> 
+  <dimen name="login_margin_horizontal_rtve_icon">70dp</dimen> 
+  <dimen name="login_icon_width">80dp</dimen> 
+  <dimen name="login_icon_text_width">110dp</dimen> 
+  <dimen name="login_margin_between_icons_horizontal">40dp</dimen> 
+  <dimen name="login_margin_between_icons_vertical">14dp</dimen> 
+  <dimen name="login_margin_between_icon_text">8dp</dimen> 
+  <dimen name="login_margin_vertical_user">128dp</dimen> 
+  <dimen name="login_margin_horizontal_user">23dp</dimen> 
+  <dimen name="login_margin_between_text_edit">7dp</dimen> 
+  <dimen name="login_margin_between_edit_text">15dp</dimen> 
+  <dimen name="login_margin_between_edit_required">19dp</dimen> 
+  <dimen name="login_margin_between_edit_button">24dp</dimen> 
+  <dimen name="login_margin_vertical_bottom_required">21dp</dimen> 
+  <dimen name="login_edit_text_width">285dp</dimen> 
+  <dimen name="login_margin_horizontal_marco">10dp</dimen> 
+  <dimen name="login_width_register_button">70dp</dimen> 
+  <dimen name="login_height_register_button">20dp</dimen> 
+  <dimen name="login_register_bottom_text_horizontal">20dp</dimen> 
+  <dimen name="login_margin_vertical_txlogin">86dp</dimen> 
+</resources>

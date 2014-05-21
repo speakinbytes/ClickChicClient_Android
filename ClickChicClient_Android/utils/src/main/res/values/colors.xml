@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+<!--   greys 
+ -->
+    <color name="light_gray">#FF808080</color>
+    <color name="dark_gray">#FF333333</color>
+    <color name="dark_gray_comenta">#4d4d4f</color>
+    <color name="black_overlay">#6f6f6f</color>
+    <color name="cloud">#55000000</color>
+    <color name="lighter_gray">#FFB3B3B3</color>
+    <color name="gris_pestana">#7E8083</color>
+    <color name="gray_login">#4c4c4f</color>
+    <color name="gray_login_icontext">#777872</color>
+</resources>
