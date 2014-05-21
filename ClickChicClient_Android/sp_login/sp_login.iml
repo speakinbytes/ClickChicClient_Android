@@ -3,7 +3,7 @@
   <component name="FacetManager">
     <facet type="android-gradle" name="Android-Gradle">
       <configuration>
-        <option name="GRADLE_PROJECT_PATH" value=":utils" />
+        <option name="GRADLE_PROJECT_PATH" value=":sp_login" />
       </configuration>
     </facet>
     <facet type="android" name="Android">
@@ -77,10 +77,11 @@
     <orderEntry type="library" exported="" name="appcompat-v7-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-4.3.23" level="project" />
+    <orderEntry type="library" exported="" name="twitter4j-core-3.0.5" level="project" />
     <orderEntry type="library" exported="" name="bolts" level="project" />
-    <orderEntry type="library" exported="" name="support-v13-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="androidasync-1.2.4" level="project" />
-    <orderEntry type="library" exported="" name="library-aar-1.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-v13-19.1.0" level="project" />
+    <orderEntry type="module" module-name="utils" exported="" />
   </component>
 </module>
 

@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/base" />
             <option value="$PROJECT_DIR$/login" />
+            <option value="$PROJECT_DIR$/sp_login" />
             <option value="$PROJECT_DIR$/utils" />
           </set>
         </option>

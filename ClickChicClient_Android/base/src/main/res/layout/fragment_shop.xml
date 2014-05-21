@@ -23,6 +23,7 @@
             android:layout_gravity="center_vertical"
             android:minHeight="60dp"
             android:minWidth="80dp"
+            android:background="@drawable/launch_love"
             android:layout_margin="5dp"
             android:id="@+id/imageView" />
 

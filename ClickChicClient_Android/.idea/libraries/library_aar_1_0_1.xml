@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="library-aar-1.0.1">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/base/build/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.1/res" />
-      <root url="jar://$PROJECT_DIR$/base/build/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.1/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/utils/build/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.1/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/utils/build/exploded-aar/com.mcxiaoke.volley/library-aar/1.0.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

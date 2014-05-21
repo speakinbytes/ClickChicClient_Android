@@ -18,6 +18,7 @@ import com.speakinbytes.base.navigation.NavigationDrawerRightFragment;
 import com.speakinbytes.base.fragments.HomeFragment;
 import com.speakinbytes.base.fragments.ShopFragment;
 import com.speakinbytes.base.models.Shop;
+import com.speakinbytes.login.fragments.FindFriendsFragment;
 import com.speakinbytes.login.fragments.LoginFragment;
 import com.speakinbytes.login.social.FacebookManager;
 import com.speakinbytes.login.social.GPManager;
@@ -54,52 +55,10 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
-       /* fragments = new Vector<Fragment>();
-        if (savedInstanceState != null) {
-            currentPage = savedInstanceState.getInt("page");
-            // create fragments to use
-            beforeFr = (BeforeFragment) getSupportFragmentManager()
-                    .getFragment(savedInstanceState, BeforeFragment.TAG);
 
-            afterFr = (AfterFragment) getSupportFragmentManager().getFragment(
-                    savedInstanceState, AfterFragment.TAG);
-            nowFr = (NowFragment) getSupportFragmentManager().getFragment(
-                    savedInstanceState, NowFragment.TAG);
-
-        }*/
 
     }
 
-    /*@Override
-    protected void onSaveInstanceState(Bundle outState) {
-        try {
-            outState.putInt("page", mViewPager.getCurrentItem());
-            if (getSupportFragmentManager().findFragmentByTag(
-                    BeforeFragment.TAG) == null) {
-                getSupportFragmentManager().putFragment(outState,
-                        BeforeFragment.TAG, mPagerAdapter.getItem(0));
-                getSupportFragmentManager().putFragment(outState,
-                        NowFragment.TAG, mPagerAdapter.getItem(1));
-                getSupportFragmentManager().putFragment(outState,
-                        AfterFragment.TAG, mPagerAdapter.getItem(2));
-                if (MetodosComunes.login != null) {
-                    try {
-                        getSupportFragmentManager().putFragment(outState,
-                                LoginFragment.FRAGMENT_NAME,
-                                MetodosComunes.login);
-                    } catch (Exception e) {
-
-                    }
-                }
-            }
-        } catch (Exception e) {
-            if (Constants.debug) {
-                Log.e(TAG, e.toString());
-            }
-        }
-        super.onSaveInstanceState(outState);
-
-    }*/
 
     @Override
     public void onStart() {
@@ -148,6 +107,11 @@ public class HomeActivity extends ActionBarActivity implements NavigationDrawerF
             fragment = ShopFragment.newInstance(new Shop());
             fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
 
+        }
+        else if(position == 5)
+        {
+            fragment = FindFriendsFragment.newInstance();
+            fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
         }
     }
 

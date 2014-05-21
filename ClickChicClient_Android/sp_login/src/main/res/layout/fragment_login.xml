@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/mango585"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:tag="LoginFragment" >
+
+
+        <TextView
+            android:id="@+id/sing_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/sing_in"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            android:layout_marginTop="70dp" />
+
+
+    <RelativeLayout
+        android:id="@+id/lyor"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lyRedes"
+        android:layout_alignLeft="@+id/viewLogin"
+        android:layout_alignRight="@+id/viewLogin"
+        >
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/white"
+            android:layout_toLeftOf="@+id/or"/>
+        <TextView
+            android:id="@+id/or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textColor="@android:color/white"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="or"
+             />
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_margin="10dp"
+            android:layout_centerVertical="true"
+            android:background="@android:color/white"
+            android:layout_toRightOf="@+id/or"/>
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/viewLogin"
+        android:layout_below="@+id/sing_up"
+        android:layout_above="@+id/lyor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       />
+
+    <LinearLayout
+        android:id="@+id/lyRedes"
+        android:layout_above="@+id/sellers"
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:padding="10dp"
+        android:background="#cc333333"
+        android:layout_margin="20dp">
+
+            <com.speakinbytes.login.views.TwitterBtn
+                android:id="@+id/btnTwitterLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/selector_twitter"
+                android:minHeight="0dp"
+                android:minWidth="0dp"/>
+
+            <com.speakinbytes.login.views.GPBtn
+                android:id="@+id/btnGplusLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/selector_google"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+
+                />
+
+            <com.speakinbytes.login.views.FacebookBtn
+                android:id="@+id/btnFacebookLogin"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_facebook"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/not_registered"
+            android:id="@+id/sellers"
+            android:layout_alignParentBottom="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

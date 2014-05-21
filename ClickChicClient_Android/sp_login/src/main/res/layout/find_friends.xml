@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/mango585"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:tag="LoginFragment" >
+
+
+    <RelativeLayout
+        android:id="@+id/loginLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:background="@color/fucsial"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center_horizontal"
+        android:visibility="visible" >
+
+
+        <TextView
+            android:id="@+id/find"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/find_invite"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            android:layout_alignLeft="@+id/friends"
+            android:layout_marginTop="120dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/friend"
+            android:id="@+id/friends"
+            android:layout_below="@+id/find"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:id="@+id/lyRedes"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/friends"
+            android:layout_marginTop="30dp"
+            android:layout_centerHorizontal="true">
+
+            <ImageButton
+                android:id="@+id/btnTwitterLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/find_tw"
+                android:minHeight="0dp"
+                android:minWidth="0dp"/>
+
+            <ImageButton
+                android:id="@+id/btnGplusLogin"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/find_gp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+
+                />
+
+            <ImageButton
+                android:id="@+id/btnFacebookLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/find_fb"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                />
+            <ImageButton
+                android:id="@+id/btnPinterestLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/find_pinterest"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                />
+        </LinearLayout>
+        <TextView
+            android:layout_margin="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/choose_sellers"
+            android:id="@+id/sellers"
+            android:layout_alignLeft="@+id/friends"
+            android:layout_below="@+id/lyRedes"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true" />
+
+        <ListView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/sellers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/listView" />
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

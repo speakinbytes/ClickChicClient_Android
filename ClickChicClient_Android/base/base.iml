@@ -70,21 +70,17 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 19 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="ion-1.2.4" level="project" />
     <orderEntry type="library" exported="" name="library-1.0.4" level="project" />
     <orderEntry type="library" exported="" name="pagerslidingtabstrip-1.0.1" level="project" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
-    <orderEntry type="library" exported="" name="facebook-android-sdk-3.14.1" level="project" />
-    <orderEntry type="library" exported="" name="appcompat-v7-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-19.1.0" level="project" />
     <orderEntry type="library" exported="" name="library-1.5.0" level="project" />
-    <orderEntry type="library" exported="" name="bolts" level="project" />
-    <orderEntry type="library" exported="" name="androidasync-1.2.4" level="project" />
-    <orderEntry type="library" exported="" name="support-v13-19.1.0" level="project" />
-    <orderEntry type="library" exported="" name="ion-1.2.4" level="project" />
-    <orderEntry type="library" exported="" name="play-services-4.3.23" level="project" />
+    <orderEntry type="library" exported="" name="twitter4j-core-3.0.5" level="project" />
     <orderEntry type="library" exported="" name="library-2.4.1" level="project" />
-    <orderEntry type="library" exported="" name="library-aar-1.0.1" level="project" />
-    <orderEntry type="module" module-name="login" exported="" />
+    <orderEntry type="library" exported="" name="support-v13-19.1.0" level="project" />
+    <orderEntry type="library" exported="" name="androidasync-1.2.4" level="project" />
+    <orderEntry type="module" module-name="sp_login" exported="" />
     <orderEntry type="module" module-name="utils" exported="" />
   </component>
 </module>
