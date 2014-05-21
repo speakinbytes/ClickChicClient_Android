@@ -48,7 +48,7 @@ public class FindFriendsFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.find_friends, container, false);
         mList = (ListView) view.findViewById(R.id.listView);
-        SellersTwAdapter  mAdapter= new SellersTwAdapter(getActivity(), R.layout.header);
+        SellersTwAdapter  mAdapter= new SellersTwAdapter(getActivity(), R.layout.item_tw_list);
         mAdapter.addAll(generateData());
         mList.setAdapter(mAdapter);
         return view;

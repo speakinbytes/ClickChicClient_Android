@@ -40,7 +40,7 @@ public class SellersTwAdapter extends ArrayAdapter<PerfilModel> {
 
         ViewHolder vh;
         if (convertView == null) {
-            convertView = mLayoutInflater.inflate(R.layout.header, parent, false);
+            convertView = mLayoutInflater.inflate(R.layout.item_tw_list, parent, false);
             vh = new ViewHolder();
             vh.mImg = (NetworkImageView) convertView.findViewById(R.id.imageView);
 
